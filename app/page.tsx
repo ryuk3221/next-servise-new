@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import OrderForm from '@/components/OrderForm';
-import { CheckCircle, Clock, Shield, Users, Phone, Star } from 'lucide-react';
+import { CheckCircle, Clock, Shield, Users, Phone, Star, Settings, Wrench, FileText, ThumbsUp } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -103,6 +103,39 @@ export default function Home() {
       icon: <CheckCircle className="h-8 w-8 text-red-600" />,
       title: 'Оригинальные запчасти',
       description: 'Используем только оригинальные комплектующие Bosch'
+    }
+  ];
+
+  const repairSteps = [
+    {
+      icon: <Phone className="h-12 w-12 text-red-600" />,
+      title: 'Прием заявки',
+      description: 'Вы звоните нам или оставляете заявку на сайте. Мы уточняем детали поломки и договариваемся о времени визита мастера.'
+    },
+    {
+      icon: <Settings className="h-12 w-12 text-red-600" />,
+      title: 'Диагностика',
+      description: 'Мастер приезжает в назначенное время, проводит полную диагностику техники и определяет причину неисправности.'
+    },
+    {
+      icon: <FileText className="h-12 w-12 text-red-600" />,
+      title: 'Согласование ремонта',
+      description: 'Мы озвучиваем стоимость ремонта и сроки выполнения работ. Приступаем к ремонту только после вашего согласия.'
+    },
+    {
+      icon: <Wrench className="h-12 w-12 text-red-600" />,
+      title: 'Выполнение ремонта',
+      description: 'Мастер выполняет ремонт с использованием оригинальных запчастей Bosch. Большинство ремонтов выполняется за один визит.'
+    },
+    {
+      icon: <CheckCircle className="h-12 w-12 text-red-600" />,
+      title: 'Тестирование',
+      description: 'После ремонта мы тестируем технику в различных режимах работы, чтобы убедиться в качестве выполненных работ.'
+    },
+    {
+      icon: <ThumbsUp className="h-12 w-12 text-red-600" />,
+      title: 'Гарантия',
+      description: 'Выдаем письменную гарантию на выполненные работы до 2 лет. Консультируем по правильной эксплуатации техники.'
     }
   ];
 
@@ -208,36 +241,157 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Отзывы клиентов</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Более 5000 довольных клиентов доверили нам ремонт своей техники Bosch
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 name: 'Анна Сушкова',
-                text: 'Отличный сервис! Мастер приехал быстро, починил стиральную машину за час. Рекомендую!',
-                rating: 5
+                text: 'Отличный сервис! Мастер приехал быстро, починил стиральную машину за час. Работает уже полгода без проблем. Рекомендую!',
+                rating: 5,
+                service: 'Ремонт стиральной машины'
               },
               {
                 name: 'Михаил Дудников',
-                text: 'Профессиональный подход к ремонту кофемашины. Теперь работает как новая!',
-                rating: 5
+                text: 'Профессиональный подход к ремонту кофемашины. Мастер не только починил, но и научил правильно ухаживать. Теперь кофе как в ресторане!',
+                rating: 5,
+                service: 'Ремонт кофемашины'
               },
               {
                 name: 'Елена Самбурова',
-                text: 'Спасибо за качественный ремонт холодильника. Работают быстро и аккуратно.',
-                rating: 5
+                text: 'Спасибо за качественный ремонт холодильника. Приехали в тот же день, быстро нашли проблему и устранили. Работают быстро и аккуратно.',
+                rating: 5,
+                service: 'Ремонт холодильника'
+              },
+              {
+                name: 'Дмитрий Козлов',
+                text: 'Посудомойка перестала мыть посуду. Мастер заменил насос и почистил фильтры. Теперь работает как новая! Цены адекватные.',
+                rating: 5,
+                service: 'Ремонт посудомоечной машины'
+              },
+              {
+                name: 'Ольга Петрова',
+                text: 'Сушильная машина сильно шумела. Оказалось, износились подшипники. Заменили быстро, дали гарантию на 2 года. Очень довольна!',
+                rating: 5,
+                service: 'Ремонт сушильной машины'
+              },
+              {
+                name: 'Александр Иванов',
+                text: 'Вызывал мастера для профилактики кофемашины. Сделали полную чистку, заменили фильтры. Теперь кофе стал намного вкуснее!',
+                rating: 5,
+                service: 'Обслуживание кофемашины'
               }
             ].map((review, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
+              <div key={index} className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
                 <div className="flex mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">"{review.text}"</p>
-                <p className="font-semibold text-gray-900">{review.name}</p>
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">"{review.text}"</p>
+                <div className="border-t pt-4">
+                  <p className="font-semibold text-gray-900">{review.name}</p>
+                  <p className="text-xs text-gray-500 mt-1">{review.service}</p>
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How Repair Works */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Как происходит ремонт техники Bosch</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Наш сервисный центр работает по отработанной схеме, которая гарантирует качественный ремонт 
+              бытовой техники Bosch в Сочи. Мы используем современное диагностическое оборудование и 
+              оригинальные запчасти для восстановления работоспособности вашей техники.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {repairSteps.map((step, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex justify-center mb-4">
+                  {step.icon}
+                </div>
+                <div className="text-center mb-4">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-red-600 text-white rounded-full text-sm font-bold mb-2">
+                    {index + 1}
+                  </span>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {step.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 bg-white p-8 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Профессиональный ремонт техники Bosch в Сочи
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Наши преимущества:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Сертифицированные мастера с опытом работы более 10 лет</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Использование только оригинальных запчастей Bosch</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Современное диагностическое оборудование</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Гарантия на выполненные работы до 24 месяцев</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Что мы ремонтируем:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <Wrench className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Стиральные и сушильные машины всех серий</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Wrench className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Посудомоечные машины встраиваемые и отдельностоящие</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Wrench className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Кофемашины автоматические и рожковые</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Wrench className="h-5 w-5 text-red-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm">Холодильники всех типов включая Side-by-Side</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-8 p-6 bg-red-50 rounded-lg">
+              <p className="text-red-800 text-sm leading-relaxed">
+                <strong>Важно знать:</strong> Качественный ремонт техники Bosch требует профессионального подхода. 
+                Наш сервисный центр в Сочи специализируется исключительно на технике этого бренда, что позволяет 
+                нам глубоко изучить особенности каждой модели и обеспечить максимально эффективный ремонт. 
+                Мы работаем только с оригинальными запчастями и используем рекомендованные производителем методы ремонта.
+              </p>
+            </div>
           </div>
         </div>
       </section>
