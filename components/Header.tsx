@@ -57,7 +57,7 @@ const Header = () => {
           <div className="py-4">
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center space-x-3">
-                <div className="bg-red-600 p-3 rounded-lg" style={{color: "#fff", fonrWeight: 600}}>
+                <div className="bg-red-600 p-3 rounded-lg" style={{color: "#fff", fontWeight: '600'}}>
                   BOSCH
                 </div>
                 <div>
