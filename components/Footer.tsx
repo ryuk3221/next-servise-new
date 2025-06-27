@@ -47,6 +47,11 @@ const Footer = () => {
                   Ремонт кофемашин
                 </Link>
               </li>
+              <li>
+                <Link href="/remont-kholodilnikov" className="hover:text-red-500 transition-colors">
+                  Ремонт холодильников
+                </Link>
+              </li>
             </ul>
           </div>
 

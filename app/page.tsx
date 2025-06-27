@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Главная',
-  description: 'Сервисный центр Bosch в Сочи - профессиональный ремонт стиральных машин, посудомоечных машин, кофемашин и сушильных машин. Выезд мастера 24/7, гарантия качества.',
+  description: 'Сервисный центр Bosch в Сочи - профессиональный ремонт стиральных машин, посудомоечных машин, кофемашин, сушильных машин и холодильников. Выезд мастера 24/7, гарантия качества.',
   openGraph: {
     title: 'Сервисный центр Bosch Сочи - Ремонт бытовой техники',
     description: 'Профессиональный ремонт техники Bosch в Сочи. Выезд мастера 24/7, оригинальные запчасти, гарантия качества.',
@@ -67,6 +67,19 @@ export default function Home() {
       ],
       href: '/remont-kofemashin',
       imageSrc: 'https://images.pexels.com/photos/6205509/pexels-photo-6205509.jpeg?auto=compress&cs=tinysrgb&w=400'
+    },
+    {
+      title: 'Ремонт холодильников',
+      description: 'Профессиональный ремонт и обслуживание холодильников Bosch',
+      price: '2000 ₽',
+      features: [
+        'Замена компрессора',
+        'Заправка фреоном',
+        'Ремонт системы No Frost',
+        'Гарантия до 2 лет'
+      ],
+      href: '/remont-kholodilnikov',
+      imageSrc: 'https://images.pexels.com/photos/2343468/pexels-photo-2343468.jpeg?auto=compress&cs=tinysrgb&w=400'
     }
   ];
 
@@ -173,7 +186,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
@@ -211,7 +224,7 @@ export default function Home() {
               },
               {
                 name: 'Елена Самбурова',
-                text: 'Спасибо за качественный ремонт посудомойки. Работают быстро и аккуратно.',
+                text: 'Спасибо за качественный ремонт холодильника. Работают быстро и аккуратно.',
                 rating: 5
               }
             ].map((review, index) => (

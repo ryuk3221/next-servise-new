@@ -17,6 +17,7 @@ const Header = () => {
     { name: 'Ремонт сушильных машин', href: '/remont-sushilnykh-mashin' },
     { name: 'Ремонт посудомоечных машин', href: '/remont-posudomoechnykh-mashin' },
     { name: 'Ремонт кофемашин', href: '/remont-kofemashin' },
+    { name: 'Ремонт холодильников', href: '/remont-kholodilnikov' },
   ];
 
   const navigation = [
