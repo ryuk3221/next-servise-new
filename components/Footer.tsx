@@ -9,12 +9,11 @@ const Footer = () => {
           {/* Company info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="bg-red-600 p-2 rounded-lg">
-                <Wrench className="h-6 w-6 text-white" />
+              <div className="bg-red-600 p-2 rounded-lg" style={{color: '#fff', fontWeight: '700'}}>
+                BOSCH
               </div>
               <div>
                 <h3 className="text-xl font-bold">Сервисный центр</h3>
-                <p className="text-red-500 font-semibold">BOSCH Сочи</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm">
