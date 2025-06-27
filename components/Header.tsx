@@ -58,13 +58,13 @@ const Header = () => {
             <div className="flex justify-between items-center">
               <Link href="/" className="flex items-center space-x-3">
                 <div className="bg-red-600 p-3 rounded-lg">
-                  <Wrench className="h-8 w-8 text-white" />
+                  BOSCH
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900">
                     Сервисный центр
                   </h1>
-                  <p className="text-red-600 font-semibold">BOSCH Сочи</p>
+                  <p className="text-red-600 font-semibold"> Сочи</p>
                 </div>
               </Link>
 
