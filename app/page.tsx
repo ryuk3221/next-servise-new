@@ -232,7 +232,7 @@ export default function Home() {
                     />
                   </div>
                   
-                  <div className="p-6 flex flex-col h-full">
+                  <div className="p-6 flex flex-col h-full" style={{paddingTop: '0px !important'}}>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors min-h-[4.5rem] flex items-center">
                       {service.title}
                     </h3>
