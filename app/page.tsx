@@ -1,8 +1,8 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ServiceCard from '@/components/ServiceCard';
 import OrderForm from '@/components/OrderForm';
-import { CheckCircle, Clock, Shield, Users, Phone, Star, Settings, Wrench, FileText, ThumbsUp } from 'lucide-react';
+import { CheckCircle, Clock, Shield, Users, Phone, Star, Settings, Wrench, FileText, ThumbsUp, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -209,7 +209,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services Grid */}
       <section id="services" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -221,7 +221,50 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <Link key={index} href={service.href} className="block group">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 h-full">
+                  <div className="p-6 flex flex-col h-full">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors min-h-[4.5rem] flex items-center">
+                      {service.title}
+                    </h3>
+                    
+                    {/* Description with fixed height */}
+                    <div className="mb-4">
+                      <p className="text-gray-600 text-sm leading-relaxed min-h-[3rem]">
+                        {service.description}
+                      </p>
+                    </div>
+                    
+                    {/* Price section */}
+                    <div className="mb-4">
+                      <div className="flex items-baseline">
+                        <span className="text-2xl font-bold text-red-600">{service.price}</span>
+                        <span className="text-gray-500 text-sm ml-1">от</span>
+                      </div>
+                    </div>
+
+                    {/* Features list with fixed height */}
+                    <div className="mb-6 flex-grow">
+                      <ul className="space-y-2 min-h-[7rem]">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="text-sm text-gray-600 flex items-start">
+                            <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                            <span className="leading-relaxed">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Button always at bottom */}
+                    <div className="mt-auto">
+                      <div className="inline-flex items-center justify-center w-full bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors group-hover:bg-red-700 font-medium">
+                        Подробнее
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
