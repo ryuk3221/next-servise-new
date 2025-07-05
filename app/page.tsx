@@ -224,7 +224,7 @@ export default function Home() {
               <Link key={index} href={service.href} className="block group">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                   {/* Image */}
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-56 overflow-hidden">
                     <img 
                       src={service.imageSrc} 
                       alt={service.title}
