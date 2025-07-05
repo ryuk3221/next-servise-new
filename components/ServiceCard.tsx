@@ -15,7 +15,9 @@ const ServiceCard = ({ title, description, price, features, href}: ServiceCardPr
     <Link href={href} className="block group">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 h-full">
         <div className="p-6 flex flex-col h-full">
-          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors"
+            style={{lineHeight: '1.5rem', minHeight: "72px"}}  
+          >
             {title}
           </h3>
           
