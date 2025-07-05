@@ -254,7 +254,7 @@ export default function Home() {
 
                     {/* Features list with fixed height */}
                     <div className="flex-grow">
-                      <ul className="space-y-2 min-h-[6rem]">
+                      <ul className="space-y-2 min-h-[4rem]">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="text-sm text-gray-600 flex items-start">
                             <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
