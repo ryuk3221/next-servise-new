@@ -222,7 +222,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link key={index} href={service.href} className="block group">
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 h-full">
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                   {/* Image */}
                   <div className="h-48 overflow-hidden">
                     <img 
@@ -253,7 +253,7 @@ export default function Home() {
                     </div>
 
                     {/* Features list with fixed height */}
-                    <div className="flex-grow">
+                    <div className="flex-grow" style={{marginBottom: "20px"}}>
                       <ul className="space-y-2 min-h-[4rem]">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="text-sm text-gray-600 flex items-start">
