@@ -223,6 +223,15 @@ export default function Home() {
             {services.map((service, index) => (
               <Link key={index} href={service.href} className="block group">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 h-full">
+                  {/* Image */}
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={service.imageSrc} 
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  
                   <div className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors min-h-[4.5rem] flex items-center">
                       {service.title}
